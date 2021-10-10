@@ -1,0 +1,169 @@
+:root {
+	--top-color: #323647;
+	--bottom-color: #282a39;
+	--button-color: #f87b59;
+	--button-color-hover: #ab4c33;
+	--transition-time: 0.1s;
+
+	--button-color-filter: invert(63%) sepia(31%) saturate(2789%)
+		hue-rotate(323deg) brightness(100%) contrast(95%);
+	--button-color-hover-filter: invert(38%) sepia(16%) saturate(2200%)
+		hue-rotate(326deg) brightness(91%) contrast(90%);
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: var(--top-color);
+}
+
+.main-container {
+	color: white;
+}
+
+.main-container a {
+	text-decoration: none;
+	color: var(--button-color);
+}
+
+.main-container a:hover {
+	transition: var(--transition-time);
+	color: var(--button-color-hover);
+}
+
+.navbar a {
+	color: white;
+}
+
+.navbar a:hover {
+	transition: var(--transition-time);
+	opacity: 0.7;
+}
+
+.nav-button {
+	background-color: var(--button-color);
+	border: none;
+	border-radius: 0.5rem;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding: 0.5rem 1rem;
+}
+
+.nav-button:hover {
+	background-color: var(--button-color-hover);
+	transition: var(--transition-time);
+	text-decoration: none;
+}
+
+.navbar-nav {
+	font-size: 1rem;
+}
+
+.navbar-brand {
+	font-size: 0.8rem;
+	font-family: "Courier New", monospace;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+#profile-pic {
+	width: auto;
+	height: 23em;
+}
+
+.row-second {
+	background-color: var(--bottom-color);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.r1-r1 {
+	font-size: 1em;
+}
+
+.r1-r2 {
+	font-size: 3em;
+	font-weight: 600;
+}
+
+.r1-r3,
+.r1-r4,
+.r1-r5 {
+	font-size: 1.1em;
+}
+
+.r2-r1 {
+	font-size: 2em;
+}
+
+.box {
+	width: 10em;
+}
+
+.r2-r3 {
+	font-size: 4em;
+	text-align: center;
+	height: 5rem;
+}
+
+.r2-r4 {
+	text-align: center;
+}
+
+#github-link svg {
+	filter: invert(100%);
+}
+
+#github-link:hover {
+	text-decoration: none;
+	transition: var(--transition-time);
+	color: var(--button-color-hover);
+}
+
+.git-link {
+	color: var(--button-color);
+	font-size: 0.6rem;
+}
+
+@media only screen and (max-width: 576px) {
+	#profile-pic {
+		height: 15em;
+		max-width: none;
+	}
+
+	.r1-r2 {
+		font-size: 2.5em;
+		font-weight: 600;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.git-link {
+		display: none;
+	}
+
+	#profile-pic {
+		height: auto;
+		width: 100%;
+	}
+
+	.r-image {
+		max-width: none;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	.main-container {
+		padding: 0.5rem !important;
+	}
+
+	.r1-r2,
+	.r2-r1 {
+		font-size: 1.5em;
+		padding-bottom: 0.7rem;
+	}
+}
