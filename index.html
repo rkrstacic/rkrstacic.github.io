@@ -12,6 +12,12 @@
 		<title>Personal webpage - Rafael Krstačić</title>
 		<link
 			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
 			href="/resources/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css"
 		/>
 		<link rel="stylesheet" href="/resources/css/style.css" />
@@ -45,9 +51,16 @@
 
 			<a
 				href="mailto:rkrstacic@student.unipu.hr"
-				class="nav-button m-auto mt-sm-0 ml-sm-3 mr-sm-4"
+				class="nav-button mt-sm-0 ml-sm-3 mr-sm-4"
 				>Contact</a
 			>
+
+			<div class="wrapper">
+				<div class="icon moon toggle-theme">
+					<div class="tooltip" id="tooltip"></div>
+					<span><i class="fas fa-moon"></i></span>
+				</div>
+			</div>
 		</nav>
 
 		<div class="main-container p-4 pt-sm-3 pl-sm-5 pr-sm-5">
@@ -64,7 +77,7 @@
 						>.
 					</div>
 					<div class="r1-r4">
-						Avid programmer, learning on daily basis.
+						Avid programmer and daily base learner.
 					</div>
 					<div class="r1-r5 pt-3">
 						This is a small personal webpage within the course
@@ -80,7 +93,7 @@
 				<div class="r-image col-10 col-sm-5 m-auto m-lg-0">
 					<img
 						id="profile-pic"
-						src="/resources/img/canvas.png"
+						src="/resources/img/profile.png"
 						alt="profile image"
 					/>
 				</div>
@@ -106,6 +119,7 @@
 			</div>
 		</div>
 		<script src="/resources/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+		<script src="/resources/js/themes.js"></script>
 		<script src="/resources/js/script.js"></script>
 	</body>
 </html>

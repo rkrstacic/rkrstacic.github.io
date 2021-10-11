@@ -1,14 +1,5 @@
 :root {
-	--top-color: #323647;
-	--bottom-color: #282a39;
-	--button-color: #f87b59;
-	--button-color-hover: #ab4c33;
 	--transition-time: 0.1s;
-
-	--button-color-filter: invert(63%) sepia(31%) saturate(2789%)
-		hue-rotate(323deg) brightness(100%) contrast(95%);
-	--button-color-hover-filter: invert(38%) sepia(16%) saturate(2200%)
-		hue-rotate(326deg) brightness(91%) contrast(90%);
 }
 
 body {
@@ -17,24 +8,38 @@ body {
 }
 
 .main-container {
-	color: white;
+	color: var(--text-color);
 }
 
 .main-container a {
 	text-decoration: none;
 	color: var(--button-color);
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
+	transition: var(--transition-time);
 }
 
 .main-container a:hover {
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
 	transition: var(--transition-time);
 	color: var(--button-color-hover);
 }
 
 .navbar a {
-	color: white;
+	color: var(--text-color);
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
+	transition: var(--transition-time);
 }
 
 .navbar a:hover {
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
 	transition: var(--transition-time);
 	opacity: 0.7;
 }
@@ -43,14 +48,22 @@ body {
 	background-color: var(--button-color);
 	border: none;
 	border-radius: 0.5rem;
-	color: white;
+	color: var(--text-color);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding: 0.5rem 1rem;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
+	transition: var(--transition-time);
 }
 
 .nav-button:hover {
 	background-color: var(--button-color-hover);
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
 	transition: var(--transition-time);
 	text-decoration: none;
 }
@@ -71,9 +84,12 @@ body {
 #profile-pic {
 	width: auto;
 	height: 23em;
+	filter: var(--profile-filter);
+	overflow-x: hidden;
 }
 
 .row-second {
+	border-radius: 1rem;
 	background-color: var(--bottom-color);
 }
 
@@ -82,7 +98,7 @@ body {
 }
 
 .r1-r1 {
-	font-size: 1em;
+	font-size: 1.1em;
 }
 
 .r1-r2 {
@@ -115,11 +131,18 @@ body {
 }
 
 #github-link svg {
-	filter: invert(100%);
+	filter: var(--filter-invert);
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
+	transition: var(--transition-time);
 }
 
 #github-link:hover {
 	text-decoration: none;
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
 	transition: var(--transition-time);
 	color: var(--button-color-hover);
 }
@@ -135,6 +158,10 @@ body {
 		max-width: none;
 	}
 
+	.git-link {
+		display: none;
+	}
+
 	.r1-r2 {
 		font-size: 2.5em;
 		font-weight: 600;
@@ -142,10 +169,6 @@ body {
 }
 
 @media only screen and (max-width: 400px) {
-	.git-link {
-		display: none;
-	}
-
 	#profile-pic {
 		height: auto;
 		width: 100%;
@@ -157,13 +180,78 @@ body {
 }
 
 @media only screen and (max-width: 300px) {
-	.main-container {
-		padding: 0.5rem !important;
-	}
-
 	.r1-r2,
 	.r2-r1 {
 		font-size: 1.5em;
 		padding-bottom: 0.7rem;
 	}
+}
+
+.wrapper .icon {
+	position: relative;
+	background-color: var(--bottom-color);
+	color: var(--button-color);
+	border: 0.2rem solid var(--button-color);
+	border-radius: 50%;
+	padding: 15px;
+	margin: 10px;
+	width: 50px;
+	height: 50px;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+	position: absolute;
+	top: 0;
+	width: 200%;
+	font-size: 0.8rem;
+	font-weight: 600;
+	background-color: var(--button-color);
+	color: var(--button-color);
+	padding: 5px 8px;
+	border-radius: 0.2rem;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	height: 1rem;
+	width: 1rem;
+	background-color: var(--button-color);
+	top: -0.3rem;
+	left: 50%;
+	transform: translate(-50%) rotate(45deg);
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+	top: 4rem;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .moon:hover,
+.wrapper .moon:hover .tooltip,
+.wrapper .moon:hover .tooltip::before {
+	border-color: var(--button-color-hover);
+	background-color: var(--switch-button-color);
+	color: var(--top-color);
 }
