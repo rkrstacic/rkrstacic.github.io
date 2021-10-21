@@ -1,0 +1,47 @@
+.modal-content {
+	background-color: var(--top-color);
+	color: var(--text-color);
+}
+
+.modal-header,
+.modal-footer {
+	border: none;
+}
+
+.modal-body {
+	padding: 1em 2em 0em 2em;
+}
+
+.modal-body,
+.modal-footer {
+	background-color: var(--bottom-color);
+}
+
+.close {
+	color: var(--button-color);
+	text-shadow: none;
+	font-size: 2rem;
+}
+
+.close:hover {
+	-webkit-transition: var(--transition-time);
+	-moz-transition: var(--transition-time);
+	-o-transition: var(--transition-time);
+	transition: var(--transition-time);
+	color: var(--button-color-hover);
+}
+
+.contact-input {
+	background-color: var(--top-color);
+	border: 0.08rem solid var(--text-color);
+	border-radius: 0.3rem;
+	color: var(--text-color);
+	width: 100%;
+	padding: 0.3rem;
+}
+
+@media only screen and (max-width: 400px) {
+	.modal-body {
+		padding: 1em 1em 0em 1em;
+	}
+}

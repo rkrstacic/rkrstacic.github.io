@@ -1,0 +1,68 @@
+.wrapper .icon {
+	position: relative;
+	background-color: var(--bottom-color);
+	color: var(--button-color);
+	border: 0.2rem solid var(--button-color);
+	border-radius: 50%;
+	padding: 15px;
+	margin: 10px;
+	width: 50px;
+	height: 50px;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+	position: absolute;
+	top: 0;
+	width: 200%;
+	font-size: 0.8rem;
+	font-weight: 600;
+	background-color: var(--button-color);
+	color: var(--button-color);
+	padding: 5px 8px;
+	border-radius: 0.2rem;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	height: 1rem;
+	width: 1rem;
+	background-color: var(--button-color);
+	top: -0.3rem;
+	left: 50%;
+	transform: translate(-50%) rotate(45deg);
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+	top: 4rem;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .moon:hover,
+.wrapper .moon:hover .tooltip,
+.wrapper .moon:hover .tooltip::before {
+	border-color: var(--button-color-hover);
+	background-color: var(--switch-button-color);
+	color: var(--top-color);
+}

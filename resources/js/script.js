@@ -1,6 +1,7 @@
 // Trigger button selector
 const themeButton = document.querySelector(".toggle-theme");
 const themeText = document.querySelector("#tooltip");
+const experienceText = document.querySelector(".r2-r3");
 
 // Selectors for root variables
 const _rootSelectors = {
@@ -48,6 +49,10 @@ function changeTheme(){
 // Initialize dark theme
 changeProp(_rootSelectors.theme, 0);
 changeTheme();
+
+// Set experience year
+const currentYear = new Date().getFullYear();
+experienceText.innerHTML = currentYear - 2017 + "+";
 
 // On click, change the theme
 themeButton.addEventListener("click", () => {
